@@ -17,6 +17,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>quiz</Name>
     <RootNamespace>quiz</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -27,6 +28,45 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="englishquiz\db.sqlite3" />
+    <Content Include="englishquiz\englishquiz\__pycache__\settings.cpython-36.pyc" />
+    <Content Include="englishquiz\englishquiz\__pycache__\urls.cpython-36.pyc" />
+    <Content Include="englishquiz\englishquiz\__pycache__\wsgi.cpython-36.pyc" />
+    <Content Include="englishquiz\englishquiz\__pycache__\__init__.cpython-36.pyc" />
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.6</Version>
+      <Description>env (Python 3.6 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="englishquiz\" />
+    <Folder Include="englishquiz\englishquiz\" />
+    <Folder Include="englishquiz\englishquiz\__pycache__\" />
+    <Folder Include="englishquiz\tests\" />
+    <Folder Include="englishquiz\tests\migrations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="englishquiz\englishquiz\asgi.py" />
+    <Compile Include="englishquiz\englishquiz\settings.py" />
+    <Compile Include="englishquiz\englishquiz\urls.py" />
+    <Compile Include="englishquiz\englishquiz\wsgi.py" />
+    <Compile Include="englishquiz\englishquiz\__init__.py" />
+    <Compile Include="englishquiz\manage.py" />
+    <Compile Include="englishquiz\tests\admin.py" />
+    <Compile Include="englishquiz\tests\apps.py" />
+    <Compile Include="englishquiz\tests\migrations\__init__.py" />
+    <Compile Include="englishquiz\tests\models.py" />
+    <Compile Include="englishquiz\tests\tests.py" />
+    <Compile Include="englishquiz\tests\views.py" />
+    <Compile Include="englishquiz\tests\__init__.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 
